@@ -1,3 +1,5 @@
+#Create an example orange tree class and game
+
 class OrangeTree 
 
 	def initialize

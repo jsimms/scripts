@@ -1,3 +1,5 @@
+#Use the command line to sing 99 bottles of beer. 
+
 bottlecount = 99 
 
 while bottlecount > 0 

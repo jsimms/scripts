@@ -1,3 +1,5 @@
+#Create an example Bank Account class 
+
 class Account 
     attr_reader :name
     attr_reader :balance 

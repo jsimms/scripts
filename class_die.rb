@@ -1,3 +1,5 @@
+#Create an example Dice class
+
 class Die
   
   def initialize

@@ -1,3 +1,5 @@
+#Create an example Dragon as a pet class. 
+
 class Dragon
   
   def initialize name

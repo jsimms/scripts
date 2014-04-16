@@ -1,3 +1,6 @@
+#Write a method that sorts a given array alphabetically. 
+#Also include a parameter that determines if it should be done a-z or z-a, with a default to a-z
+
 def alphabetize(arr, rev=false) 
     if rev 
         arr.sort!.reverse!
