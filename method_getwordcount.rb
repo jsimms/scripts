@@ -1,4 +1,5 @@
 #given a string, find the frequency of a word in that string
+#would be better if it could account for punctuation 
 
 def find_frequency(string, word)
   word_array = string.downcase.split 
