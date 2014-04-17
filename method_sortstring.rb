@@ -6,7 +6,8 @@
 def sort_string(string)
 	words = string.split
 	#loop through array, get length and sort by length.  
-	words.sort { |x,y| x.length <=> y.length }
+	words.sort! { |x,y| x.length <=> y.length }
+	words.join(" ")
 end 
 
-puts sort_string("this string should have a couple different word lengths j asdfasdfasd sd dsdsdsdd")
+puts sort_string("this string should have a couple different word lengths")
