@@ -9,7 +9,7 @@ family = { "Homer" => "dad",
 }
 
 friends.each do |x|
-	puts "#{x}" 
-end 
+	puts "#{x}"
+end
 
-family.each { |x, y| puts "#{x}: #{y}" } 
+family.each { |x, y| puts "#{x}: #{y}" }
