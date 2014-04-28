@@ -1,4 +1,4 @@
-# ehhhh, a little buggy. Need to finish. 
+# ehhhh, a little buggy. Need to finish.
 
 =begin
 
@@ -16,13 +16,15 @@
 
 def new_roman_numeral(number)
 
-  numeral = []
+  numeral = ""
 
+  # Calculate the number of Roman numeral digits
   thous = number/1000
   hunds = number%1000/100
   tens = number%100/10
   ones = number%10
 
+  # Go through each digit and determine how to display it
   numeral << "M"*thous
 
   if hunds == 9
@@ -56,4 +58,4 @@ def new_roman_numeral(number)
 
 end
 
-puts new_roman_numeral(99)
+puts new_roman_numeral(7777)
