@@ -1,5 +1,3 @@
-# NOT DONE, KEEP ON DOIN'
-
 =begin
 
   Write a method that when passed an integer between 1 and 3000 (or so)
