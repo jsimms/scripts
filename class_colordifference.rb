@@ -2,7 +2,7 @@
 # 2. Create a method that determines the brightness index of itself,
 # 3. Create a method that determines the brightness difference between itself and another instance of the class,
 # 4. Create a method that determines the hue difference between itself and another instance of the class,
-# 5. Create a method that determines if there is enough contrast between itself and another instance of the class. 
+# 5. Create a method that determines if there is enough contrast between itself and another instance of the class.
 
 class Color
   attr_reader :r, :g, :b
@@ -32,3 +32,15 @@ class Color
     end
   end
 end
+
+a = Color.new(42, 42, 42)
+b = Color.new(210, 210, 210)
+c = Color.new(42, 21, 58)
+d = Color.new(100, 200, 255)
+
+puts a.brightness_index
+puts b.brightness_index
+puts a.brightness_difference(b)
+puts a.hue_difference(b)
+puts a.enough_contrast?(b)
+puts c.enough_contrast?(c)
