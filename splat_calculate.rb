@@ -6,21 +6,25 @@ def add(*numbers)
 end
 
 def subtract(*numbers)
-  numbers.inject(0) { |difference, number| difference - number }
+  difference = numbers.shift
+  numbers.each { |number| difference = difference - number }
+  difference
 end
 
+
 def calculate(*numbers)
-  # Get the params figured out.
+  # remove params from array, if necessary
   if numbers.last.is_a?(Hash)
     params = numbers.pop
   else
     params = {}
   end
-  # Do the right math
   result = add(*numbers)
-  # TODO - figure out how to freaking call the right method. 
-  #result = add(*numbers) if params[:add]
-  #result = subtract(*numbers) if operation[:subtract]
+  result = add(*numbers) if params[:add]
+  result = subtract(*numbers) if params[:subtract]
+  result
 end
 
-puts calculate(1,2,3,4,5, :operation => :add)
+puts calculate(1,2,3,4,5)
+puts calculate(1,2,3,4,5,10, :add => true)
+puts calculate(10,2,2,2,2, :subtract => true)
