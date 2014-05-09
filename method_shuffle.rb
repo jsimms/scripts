@@ -12,7 +12,7 @@ def rec_shuffle(unshuffled, shuffled)
   end
   # Determine the length of the unshuffled array
   # and randomly select an index in it.
-  # sample won't work as we need to be able to delete the index
+  # using .sample won't work as we need to be able to delete the index
   random = unshuffled[rand(unshuffled.length)]
 
   # Now push the random number to shuffled, and delete it from unshuffled

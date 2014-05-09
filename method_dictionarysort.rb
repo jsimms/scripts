@@ -16,7 +16,7 @@ def rec_dictionary_sort(unsorted, sorted)
   still_unsorted = []
   unsorted.each do |x|
     if x.downcase < smallest.downcase
-      still_unsorted.push smallest
+      still_unsorted.push smallest # make sure you don't loose the 'not smallest' element
       smallest = x
     else
       still_unsorted.push x
