@@ -1,62 +1,64 @@
-# take a number, like 22, and return the English version of it - 'twenty-two'
-# Only worry about integers from 0-100
-
-
 def english_number(number)
-  # check if number is an integer, or if it is zero
   if number < 0
-    return "Please enter a number that is not negative"
+    return "please provide a positive number"
   end
   if number == 0
-    return "zero"
+    return 'zero'
   end
 
-  string = "" # <- this is what we return
+  num_string = ""
 
-
-  # assign all potential digits
-  ones_place = [  'one',  'two',  'three',
-                  'four', 'five', 'six',
-                  'seven','eight','nine'    ]
-
-  tens = [ 'ten',    'twenty',  'thirty'
-           'fourty', 'fifty',   'sixty'
-           'seventy','eighty',  'ninety'  ]
-
-  teenagers  = [  'eleven',    'twelve',   'thirteen',
-                  'fourteen',  'fifteen',  'sixteen',
-                  'seventeen', 'eighteen', 'nineteen'  ]
-
-  # left will be how much of the number we still have to write out
-  # write is the part we are 'writing' out right now, starting with the 100s
+  ones_place = ['one','two','three','four','five','six','seven','eight','nine']
+  tens_place = ['ten','twenty','thirty','fourty','fifty','sixty','seventy','eighty','ninety']
+  teenagers = ['eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen']
 
   left = number
   write = left/100
-
-  left =  left - write*100
+  left = left - write*100
 
   if write > 0
-    # call it all ova again! Recursion!
     hundreds = english_number(write)
-    string = string + hundreds + " hundred"
-
+    num_string = num_string + hundreds + ' hundred'
     if left > 0
-      string = string + " "
+      num_string = num_string + " "
     end
-
   end
 
-  write = left/10 # movin' on to the tens
+  write = left/10
   left = left - write*10
-
   if write > 0
-    if ((write == 1) and (left>0))
-      string = string + teenagers[left-1]
+    if ((write==1) and (left>0))
+      num_string = num_string + teenagers[left-1]
       left = 0
-    # wtf, still zonked ... can't do this stuff at night. 
+    else
+      num_string = num_string + tens_place[write-1]
+    end
+    if left > 0
+      num_string = num_string + '-'
+    end
+  end
 
+  write = left
+  left = 0
+  if write > 0
+    num_string = num_string + ones_place[write-1]
+  end
+
+  num_string
 
 end
 
-
-english_number(0)
+puts english_number(0)
+puts english_number(9)
+puts english_number(10)
+puts english_number(11)
+puts english_number(17)
+puts english_number(32)
+puts english_number(88)
+puts english_number(99)
+puts english_number(100)
+puts english_number(101)
+puts english_number(234)
+puts english_number(3211)
+puts english_number(999999)
+puts english_number(1000000000000)
