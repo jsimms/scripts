@@ -1,13 +1,12 @@
-#Use the command line to sing 99 bottles of beer. 
+#Use the command line to sing 99 bottles of beer.
 
-bottlecount = 99 
+bottlecount = 99
 
-while bottlecount > 0 
+while bottlecount > 0
 	puts "<takes a breath>"
 	puts "#{bottlecount} bottles of beer on the wall..."
 	puts "#{bottlecount} bottles of beer!"
 	puts "take one down, pass it around..."
-	bottlecount -= 1 
+	bottlecount -= 1
 	puts "#{bottlecount} bottles of beer on the wall..."
-end 
-
+end

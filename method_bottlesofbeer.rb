@@ -1,3 +1,18 @@
+def bottles_of_beer(number)
+  bottlecount = number
+  number_word = english_number(bottlecount)
+
+  while bottlecount > 0
+    puts "<takes a breath>"
+    puts "#{number_word} bottles of beer on the wall..."
+    puts "#{number_word} bottles of beer!"
+    puts "take one down, pass it around..."
+    bottlecount -= 1
+    number_word = english_number(bottlecount)
+    puts "#{number_word} bottles of beer on the wall..."
+  end
+end
+
 def english_number(number)
   if number < 0
     return "please provide a positive number"
@@ -55,24 +70,7 @@ def english_number(number)
   if write > 0
     num_string = num_string + ones_place[write-1]
   end
-
   num_string
-
 end
 
-#puts english_number(0)
-#puts english_number(9)
-#puts english_number(10)
-#puts english_number(11)
-#puts english_number(17)
-#puts english_number(32)
-#puts english_number(88)
-#puts english_number(99)
-#puts english_number(100)
-#puts english_number(101)
-#puts english_number(234)
-puts english_number(1000)
-puts english_number(3211)
-puts english_number(10000)
-puts english_number(45567)
-puts english_number(999999)
+bottles_of_beer(9999)
