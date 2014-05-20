@@ -23,6 +23,12 @@ pic_names.each do |name|
     "#{batch_name}#{pic_number}.jpg"
   end
 
+  if File.exist?(new_name)
+    puts
+    puts "the file #{new_name} already exists. rename it and try again."
+    exit
+  end
+
   File.rename(name, new_name)
   pic_number = pic_number + 1
 end
@@ -30,6 +36,7 @@ puts
 puts "done!"
 
 # TODOs -
+# put in a check to make sure a file doesn't get overwritten
 # download movies,
 # delete from camera,
 # extract time and date from file and append to the name
